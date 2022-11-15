@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// app.use(require('./routes'))
+app.use(require('./routes'))
 
 //Mongo connect
 mongoose.connect(
@@ -20,6 +20,6 @@ mongoose.connect(
   }
 );
 
-  
+mongoose.set('debug', true);
 
   app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
